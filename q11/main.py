@@ -1,3 +1,6 @@
+import time
+
+st = time.perf_counter()
 lines_rows = [[y for y in x] for x in open("q11/inp.txt").read().splitlines()]
 
 i = 0
@@ -30,3 +33,5 @@ for i, galaxy in enumerate(galaxy_list):
     for dest_galaxy in galaxy_list[i:]:
         dist += abs(galaxy[0] - dest_galaxy[0]) + abs(galaxy[1] - dest_galaxy[1])
 print(dist)
+
+print(f"took {(time.perf_counter() - st)*1000:0.4f}ms")
