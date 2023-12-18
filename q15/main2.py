@@ -11,11 +11,13 @@ def get_hash(word):
     return total
 
 
+hmap = {}
 boxes = [{} for _ in range(256)]
-
 for word in words:
     label, lens = word.split("=") if word[-1].isdigit() else (word[:-1], 0)
-    hash_val = get_hash(label)
+    if label not in hmap:
+        hmap[label] = get_hash(label)
+    hash_val = hmap[label]
     if lens:
         boxes[hash_val][label] = lens
     elif boxes[hash_val].get(label):
