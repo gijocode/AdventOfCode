@@ -15,6 +15,7 @@ for line in lines:
 
     # print(["."] * (len(report) - ((sum(num_split) * 2) - 2)))
     for i, word in enumerate(word_split):
+
         if i == 0:
             words.append("#" * int(word))
         elif i == len(word_split) - 1:

@@ -95,7 +95,6 @@ for x in range(4):
             else:
                 walk = 0
                 break
-
         elif current == "F":
             if (
                 current_coords[0] + 1 < height
